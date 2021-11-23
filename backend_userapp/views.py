@@ -35,7 +35,9 @@ class CustomUserCreate(APIView):
 
 class TickerView(View):
     def get(self, request):
+
         allTickers = Ticker.objects.all()
         serialized = serialize("json", allTickers)
         finalData = json.loads(serialized)
         return JsonResponse(finalData, safe=False)
+
