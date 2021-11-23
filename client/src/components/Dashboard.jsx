@@ -24,7 +24,7 @@ function Ticker() {
     <>
       <ul>
         {data.map((tickers) => (
-          <li key={tickers.pk}>{tickers.tickers_text}</li>
+          <li key={tickers.pk}>{tickers.fields.tickers_text}</li>
         ))}
       </ul>
     </>
