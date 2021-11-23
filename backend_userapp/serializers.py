@@ -1,6 +1,6 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
-from .models import CustomUser
+from .models import CustomUser, Ticker
 
 
 class UserSerializer(serializers.ModelSerializer):
@@ -22,3 +22,8 @@ class UserSerializer(serializers.ModelSerializer):
             instance.set_password(password)
         instance.save()
         return instance
+
+class TickersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model= Ticker
+        fields = ("pk", "user", "tickers_text", "shares_holding", "bought_date")

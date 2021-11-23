@@ -7,7 +7,7 @@ from .forms import CustomUserChangeForm, CustomUserCreationForm
 
 class TickerInline(admin.TabularInline):
     model = Ticker
-    extra = 3
+    # extra = 3
 
 class CustomUserAdmin(admin.ModelAdmin):
     add_form = CustomUserCreationForm
